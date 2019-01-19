@@ -1,0 +1,92 @@
+.page__bd {
+  margin: 0 20rpx;
+  position: relative;
+}
+.xian {
+  background: #4775ff;
+  position: absolute;
+  top: 28rpx;
+left:-38rpx;
+  width: 8rpx;
+  height: 32rpx;
+  line-height: 88rpx;
+}
+.Explanatory {
+  color: #999;
+}
+.weui-cell__ft {
+  padding-right: 32rpx;
+}
+.page-cell-title-last {
+  border: none !important;
+}
+.page__title .weui-cell__bd {
+  display: inline-block;
+  display: flex;
+  line-height:1;
+  padding-top:20rpx;
+  justify-content: space-between;
+}
+.page-cell-title:first-child {
+  margin-bottom: -24rpx !important;
+  border: 0 !important;
+  font-weight: 700;
+}
+.page__bd .page__title {
+  background: #fff;
+  margin-top: 20rpx;
+  box-shadow: 0 0 16rpx 0 rgba(0, 0, 0, 0.06);
+  border-radius: 12rpx;
+  z-index: 1;
+  overflow: hidden;
+  margin-bottom: 20rpx;
+height:330rpx;
+}
+.page__title .weui-cell{
+  margin: 0rpx 0 0rpx 40rpx;
+  padding: 28rpx 0;
+  justify-content:left;
+}
+.page__title .weui-cell text{
+  font-size:36rpx;
+color:#333333;
+margin-left: 26rpx;
+  
+}
+.page__title .weui-cell image{
+  width: 100rpx;
+  height: 100rpx;
+}
+.page__title-list{
+  margin: 0 40rpx;
+}
+ .page__cell .weui-cell {
+  border-bottom: 1px solid #e5e5e5;
+  margin: 0rpx 0 0rpx 38rpx;
+
+}
+.page__bd .page__cell {
+background: #fff;
+margin-bottom: 20rpx;  border-radius: 12rpx;
+}
+.page-cell-title {
+  height: 88rpx;
+  line-height: 88rpx;
+  border: none;
+}
+.receivingAddress{
+display: flex;
+height:132rpx;
+line-height: 132rpx;
+justify-content:space-between;
+
+}
+.receivingAddress .weui-cell__bd{
+width: 150rpx;margin-left:38rpx; line-height:3;
+
+}
+
+.receivingAddress .weui-cell__ft{
+color:#999999;line-height:42rpx;width: 400rpx; margin-top:24rpx;
+
+}

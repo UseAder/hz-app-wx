@@ -1,0 +1,65 @@
+.weui-navbar-J-list-option {
+  line-height: 120rpx;
+  font-size: 32rpx;
+  display: flex;
+  border-bottom: 1px solid #efefef;
+  height: 120rpx;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+}
+
+.weui-navbar-J-list-option text {
+  padding-left: 102rpx;
+}
+
+.optionRight {
+  display: flex;
+}
+
+.SerialNumber {
+  display: inline;
+  background: #4a90e2;
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 100%;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  text-align: center;
+  color: #fff;
+}
+
+.weui-cell__ft_in-access {
+  margin: 0 50rpx 0 26rpx;
+}
+
+.weui-btn-area {
+  margin-top: 100rpx;
+}
+
+.weui-cell__ft_in-access:after {
+  border-width: 4rpx 4rpx 0 0;
+  border-color: #4a90e2;
+  height: 16rpx;
+  width: 16rpx;
+}
+
+.weui-btn-area button {
+  background: #4a90e2;
+  border-radius: 15rpx;
+  width: 412rpx;
+  height: 104rpx;
+  font-size: 36rpx;
+  color: #fff;
+  line-height: 104rpx;
+}
+
+.wxImage {
+  width: 50rpx;
+  height: 50rpx;
+  transform: translate(-17%, 20%);
+}
+
+/* .button-hover {
+  background-color: #f8f8f8!important;
+} */

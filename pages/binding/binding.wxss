@@ -1,0 +1,62 @@
+
+page {
+background:#fff
+}
+.nameImage, .keyImage {
+  padding: 0 26rpx 0 16rpx;
+  width: 33rpx;
+  height: 33rpx;
+}
+.page__title{
+font-size:20px;
+color:#333333;
+}
+
+.J-btn-area button {
+  color: #fff;
+  font-size: 32rpx;
+  background: #4775ff;
+  border-radius: 3px;
+  line-height: 100rpx;
+  height: 100rpx;
+}
+.weui-cell {
+  height: 102rpx;
+  margin: 0px 60rpx;
+  justify-content: unset;
+  position: relative;
+}
+.page__bd {
+  padding-top: 68rpx;
+  font-size: 30rpx;
+}
+
+.page__hd {
+  margin: auto;
+  width: 100%;
+  text-align: center;
+  padding-top: 97rpx;
+}
+
+.weui-footer {
+  font-size: 13px;
+  color: #b8b8b8;
+  position: fixed;
+  bottom: 80rpx;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  width: 600rpx;
+}
+.J-btn-area {
+  padding-top: 76rpx;
+  margin: 0 60rpx;
+} 
+.weui-input {
+width: 100%
+
+}
+.remarks{
+  font-size:12px;
+  color: red
+}

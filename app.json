@@ -1,0 +1,36 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/myinfor/myinfor",
+    "pages/delive/delive",
+    "pages/Waybill/Waybill",
+    "pages/binding/binding"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "货速运货主",
+    "navigationBarTextStyle": "#fff"
+  },
+  "tabBar": {
+    "color": "#84888e",
+    "selectedColor": "#4775ff",
+    "backgroundColor": "#fff",
+    "borderStyle": "#aeaeae",
+    "list": [
+      {
+        "selectedIconPath": "images/delive1.png",
+        "iconPath": "images/delive.png",
+        "pagePath": "pages/delive/delive",
+        "text": "订单"
+      },
+      {
+        "selectedIconPath": "images/myinfor1.png",
+        "iconPath": "images/myinfor.png",
+        "pagePath": "pages/myinfor/myinfor",
+        "text": "运输方"
+      }
+    ]
+  }
+}

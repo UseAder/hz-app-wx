@@ -1,0 +1,214 @@
+<view class="page__bd">
+  <view class="page__title">
+    <view class="weui-cell">
+      <image src='../../images/clock.png'></image>
+      <block wx:if="{{detailsOfTheWaybill.status==-1}}">
+        <text>作废</text>
+      </block>
+      <block wx:elif="{{detailsOfTheWaybill.status==1}}">
+        <text>开单</text>
+      </block>
+      <block wx:elif="{{detailsOfTheWaybill.status==5}}">
+        <text>等待发车</text>
+      </block>
+      <block wx:elif="{{detailsOfTheWaybill.status==10||detailsOfTheWaybill.status==20}}">
+        <text>运输中</text>
+      </block>
+      <block wx:elif="{{detailsOfTheWaybill.status==15}}">
+        <text>已到站</text>
+      </block>
+      <block wx:else>
+        <text>已签收</text>
+      </block>
+    </view>
+    <view class='page__title-list'>
+      <view class="weui-cell__bd">
+        运单号：
+        <text class='Explanatory'>{{detailsOfTheWaybill.waybillNo}}</text>
+      </view>
+      <view class="weui-cell__bd">
+        <text decode="{{true}}"> 线&emsp;路：</text>
+        <text class='Explanatory'>{{detailsOfTheWaybill.beginSiteName}}--{{detailsOfTheWaybill.endSiteName}}</text>
+      </view>
+      <view class="weui-cell__bd">
+        <text decode="{{true}}"> 回&emsp;单：</text>
+        <text class='Explanatory'>{{detailsOfTheWaybill.receiptNum}}份</text>
+      </view>
+    </view>
+  </view>
+  <view class="page__cell titleCell">
+    <view class="weui-cell page-cell-title ">
+      <view class="weui-cell__bd">
+        <view class='inline-block xian'></view>货物信息
+      </view>
+    </view>
+    <view class="weui-cell page-cell-title">
+      <view class="weui-cell__bd">
+        <view class='inline-block'></view>货物名称
+      </view>
+      <view class="weui-cell__ft">
+        <text class='Explanatory'>{{detailsOfTheWaybill.goodsName}}</text>
+      </view>
+    </view>
+    <view class="weui-cell page-cell-title">
+      <view class="weui-cell__bd">
+        <view class='inline-block'></view>货物件数
+      </view>
+      <view class="weui-cell__ft">
+        <text class='Explanatory' wx:if='{{detailsOfTheWaybill.goodsNum}}'>{{detailsOfTheWaybill.goodsNum}}， {{detailsOfTheWaybill.pack}}包装</text>
+      </view>
+    </view>
+    <view class="weui-cell page-cell-title">
+      <view class="weui-cell__bd">
+        <view class='inline-block'></view>货物重量
+      </view>
+      <view class="weui-cell__ft">
+        <text class='Explanatory' wx:if='{{detailsOfTheWaybill.goodsWeight}}'>{{detailsOfTheWaybill.goodsWeight}}千克</text>
+      </view>
+    </view>
+    <view class="weui-cell page-cell-title page-cell-title-last">
+      <view class="weui-cell__bd">
+        <view class='inline-block'></view>货物体积
+      </view>
+      <view class="weui-cell__ft">
+        <text class='Explanatory' wx:if='{{detailsOfTheWaybill.goodsBulk}}'>{{detailsOfTheWaybill.goodsBulk}}方</text>
+      </view>
+    </view>
+  </view>
+  <view class="page__cell titleCell">
+    <view class="weui-cell page-cell-title ">
+      <view class="weui-cell__bd">
+        <view class='inline-block xian'></view>跟踪信息
+      </view>
+    </view>
+    <view class="weui-cell page-cell-title {{detailsOfTheWaybill.waybillTrackList.length-1==index?'page-cell-title-last':''}}" wx:for='{{detailsOfTheWaybill.waybillTrackList}}' wx:key='this'>
+      <view class="weui-cell__bd">
+        <view class='inline-block'></view>{{item.trackTime}}
+      </view>
+      <view class="weui-cell__ft">
+        <text class='Explanatory'>{{item.content}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="page__cell titleCell">
+    <view class="weui-cell page-cell-title ">
+      <view class="weui-cell__bd">
+        <view class='inline-block xian'></view>收货方信息
+      </view>
+    </view>
+    <view class="weui-cell page-cell-title">
+      <view class="weui-cell__bd">
+        <view class='inline-block'></view>收货方名称
+      </view>
+      <view class="weui-cell__ft">
+        <text class='Explanatory'>{{detailsOfTheWaybill.consigneeName}}</text>
+      </view>
+    </view>
+  
+    <view class="weui-cell page-cell-title">
+      <view class="weui-cell__bd">
+        <view class='inline-block'></view>收货方手机
+      </view>
+      <view class="weui-cell__ft">
+        <text class='Explanatory'>{{detailsOfTheWaybill.consigneeLinkmanMobile}}</text>
+      </view>
+    </view>
+    <view class="receivingAddress">
+      <view class="weui-cell__bd">
+        收货地址
+      </view>
+      <view class="weui-cell__ft">
+        {{detailsOfTheWaybill.consigneeAddress}}
+      </view>
+    </view>
+  </view>
+  <view class="page__cell titleCell">
+    <view class="weui-cell page-cell-title ">
+      <view class="weui-cell__bd">
+        <view class='inline-block xian'></view>费用信息
+      </view>
+    </view>
+    <view class="weui-cell page-cell-title">
+      <view class="weui-cell__bd">
+        <view class='inline-block'></view>付款方式
+      </view>
+      <view class="weui-cell__ft">
+
+        <block wx:if="{{detailsOfTheWaybill.payType==1}}">
+          <text class='Explanatory'>现付</text>
+        </block>
+        <block wx:elif="{{detailsOfTheWaybill.payType==2}}">
+          <text class='Explanatory'>到付</text>
+        </block>
+        <block wx:elif="{{detailsOfTheWaybill.payType==3}}">
+          <text class='Explanatory'>回付</text>
+        </block>
+        <block wx:elif="{{detailsOfTheWaybill.payType==4}}">
+          <text class='Explanatory'>月结</text>
+        </block>
+        <block wx:elif="{{detailsOfTheWaybill.payType==5}}">
+          <text class='Explanatory'>欠付</text>
+        </block>
+        <block wx:else>
+          <text class='Explanatory'>多笔付</text>
+        </block>
+      </view>
+    </view>
+    <view class="weui-cell page-cell-title">
+      <view class="weui-cell__bd">
+        <view class='inline-block'></view>运费
+      </view>
+      <view class="weui-cell__ft">
+        <text class='Explanatory' >{{detailsOfTheWaybill.totalFee?detailsOfTheWaybill.totalFee:0}}元</text>
+      </view>
+    </view>
+    <view class="weui-cell page-cell-title">
+      <view class="weui-cell__bd">
+        <view class='inline-block'></view>提货费
+      </view>
+      <view class="weui-cell__ft">
+        <text class='Explanatory' >{{detailsOfTheWaybill.pickFee?detailsOfTheWaybill.pickFee:0}}元</text>
+      </view>
+    </view>
+    <view class="weui-cell page-cell-title ">
+      <view class="weui-cell__bd">
+        <view class='inline-block'></view>送货费
+      </view>
+      <view class="weui-cell__ft">
+        <text class='Explanatory' >{{detailsOfTheWaybill.deliverFee?detailsOfTheWaybill.deliverFee:0}}元</text>
+      </view>
+    </view>
+    <view class="weui-cell page-cell-title ">
+      <view class="weui-cell__bd">
+        <view class='inline-block'></view>代收货款
+      </view>
+      <view class="weui-cell__ft">
+        <text class='Explanatory' >{{detailsOfTheWaybill.goodsFee?detailsOfTheWaybill.goodsFee:0}}元</text>
+      </view>
+    </view>
+    <view class="weui-cell page-cell-title ">
+      <view class="weui-cell__bd">
+        <view class='inline-block'></view>代收货款手续费
+      </view>
+      <view class="weui-cell__ft">
+        <text class='Explanatory'>{{detailsOfTheWaybill.goodsServiceFee?detailsOfTheWaybill.goodsServiceFee:0}}元</text>
+      </view>
+    </view>
+    <view class="weui-cell page-cell-title ">
+      <view class="weui-cell__bd">
+        <view class='inline-block'></view>货物价值
+      </view>
+      <view class="weui-cell__ft">
+        <text class='Explanatory' >{{detailsOfTheWaybill.goodsValue?detailsOfTheWaybill.goodsValue:0}}元</text>
+      </view>
+    </view>
+    <view class="weui-cell page-cell-title page-cell-title-last">
+      <view class="weui-cell__bd">
+        <view class='inline-block'></view>保费
+      </view>
+      <view class="weui-cell__ft">
+        <text class='Explanatory' >{{detailsOfTheWaybill.insuranceFee?detailsOfTheWaybill.insuranceFee:0}}元</text>
+      </view>
+    </view>
+  </view>
+</view>

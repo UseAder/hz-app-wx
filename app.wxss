@@ -1,0 +1,27 @@
+/**app.wxss**/
+@import "weui.wxss";
+page{
+  background:#f8f8f8;color:#000;
+  
+}
+::-webkit-scrollbar{
+width: 0;
+height: 0;
+color: transparent;
+}
+.J-textAlign{
+display:inline-block;
+
+}
+.inline-block {
+  display: inline-block;
+}
+.J-underWay{
+  color:#ff9b3a;
+}
+.J-completed{
+  color:#b8b8b8;
+}
+.Explanatory {
+  color:#757575;
+}

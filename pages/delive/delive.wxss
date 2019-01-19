@@ -1,0 +1,186 @@
+.J-triangle {
+  width: 0;
+  height: 0;
+  border-width: 10rpx 8rpx 0px;
+  border-style: solid;
+
+  top: -4rpx;
+  left: 7rpx;
+  position: relative;
+  display: inline-block;
+}
+
+.weui-navbar-J {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: #fff;
+  box-shadow: 0 4rpx 16rpx 0 rgba(0, 0, 0, 0.06);
+}
+.screen-title{
+  top: 88rpx;background: #fef2f2;height: 88rpx;    
+
+
+background:#4775ff;
+background:#769AFF;
+color: #fff
+
+}
+.screen-title-text{
+ line-height:86rpx;
+font-size:34rpx;
+margin-left:22rpx;
+font-weight:700;
+
+}
+
+.weui-navbar-J-title {
+  position: relative;
+  width: 100%;
+}
+
+.weui-navbar-J-title-text {
+  line-height: 88rpx;
+  height: 88rpx;
+}
+
+.weui-navbar-J-list {
+overflow-y:auto;
+position:absolute;
+width:100%;
+top:88rpx;
+transition:height 0.3s;
+/* overflow:hidden; */
+background:#fff;
+z-index:1;
+
+}
+
+.J-title-text-triangle {
+  width: 308rpx;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.J-title-text-triangle text {
+  font-size: 36rpx;
+  
+}
+
+.weui-navbar-J-title-image {
+  position: absolute;
+  top: 22rpx;
+  right: 22rpx;
+}
+
+.weui-navbar-J-title-image image {
+  width: 44rpx;
+  height: 44rpx;
+}
+.weui-navbar-J-list-option {
+  line-height: 88rpx;
+  font-size: 28rpx;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30rpx;
+}
+
+.weui-navbar-J-list-option:nth-child(1) {
+  border-top: 1px solid #efefef;
+}
+
+/* 内容 */
+
+
+.page__bd {
+  padding-top: 90rpx;
+  position: relative;
+}
+.xian {
+  background: #4775ff;
+  position: absolute;
+  top: 28rpx;
+  left: -28rpx;
+  width: 8rpx;
+  height: 32rpx;
+  margin-right: 20rpx;
+  line-height: 88rpx;
+}
+
+
+
+
+.page__bd .page__title {
+  color: #000;
+  text-align: center;
+  font-size: 36rpx;
+  font-family: PingFangSC-Regular;
+}
+
+.page__bd .page__cell {
+  background: #fff;
+  margin: 20rpx 20rpx 0 20rpx;
+  box-shadow: 0 0 16rpx 0 rgba(0, 0, 0, 0.06);
+  border-radius: 12rpx;
+  z-index: 1;
+ 
+height:394rpx;
+overflow: hidden
+}
+
+.page__bd .page__cell .weui-cell {
+  border: none;
+  margin: 0;
+  padding: 0 30rpx 0 28rpx;
+}
+
+ .page-cell-title {
+  height: 88rpx;
+  line-height: 88rpx;
+  border: none;
+  border-bottom: 1px solid #d8d8d8;
+}
+.page__bd .page__cell .page-cell-title .weui-cell__bd {
+  font-size: 32rpx;
+}
+
+.page__bd .page__cell .page-cell-title .weui-cell__bd {
+  position: relative;
+}
+
+.page__bd .page__cell .page-cell-body .bd-body-ul-title {
+  font-size: 42rpx;
+  padding: 24rpx 0 12rpx 0;
+  line-height: 72rpx;
+  font-weight: bolder;
+}
+
+.page__bd .page__cell .page-cell-body .bd-body-ul-body .bd-body-ul-li {
+  color:#757575;
+
+ line-height:1;
+margin-bottom:27rpx;
+
+}
+.weui-cell__ft image{
+width: 22rpx;height: 22rpx;margin-left: 10rpx
+}
+.page-cell-footer{
+color:#464e68;
+    height: 88rpx;
+  line-height: 88rpx;
+  border-top: 1px solid #e5e5e5!important;
+}
+.page-cell-footer image{
+    height: 28rpx;
+    width: 28rpx;
+padding:0 14rpx 0 28rpx;
+
+}
+.weui-navbar-J-list-te{
+box-shadow:0 4rpx 16rpx 0 rgba(0, 0, 0, 0.06);
+}
+
+.weui-tab{
+  margin-bottom: 20rpx
+}

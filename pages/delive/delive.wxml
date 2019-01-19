@@ -1,0 +1,124 @@
+<view class="page">
+  <view class="page__hd">
+    <view class="weui-tab">
+      <view class="weui-navbar weui-navbar-J" style='height:{{selectShow?selectData.length*88+88:88}}rpx;'>
+        <view class='weui-navbar-J-title'>
+          <view class='weui-navbar-J-title-text'>
+            <view class='J-title-text-triangle' catchtap='selectTitle'>
+              <view class='J-textAlign'>
+                <text style='color:{{selectShow?"#4775ff":"#000"}};'>{{allWaybill}}</text>
+                <view class='J-triangle' style='border-color: {{selectShow?"#4775ff":"#333"}} transparent transparent; '></view>
+              </view>
+            </view>
+          </view>
+          <view class='weui-navbar-J-title-image'>
+            <image catchtap='screenTitle' wx:if="{{selectScreen}}" src="../../images/screen1.png"></image>
+            <image catchtap='screenTitle' wx:else src="../../images/screen.png"></image>
+          </view>
+        </view>
+        <!-- 选择列表 -->
+        <view class='weui-navbar-J-list' style='height:{{selectShow?(selectData.length>5?300:selectData.length*88):0}}rpx;'>
+          <view class='weui-navbar-J-list-option' wx:for='{{selectData}}' wx:key='this' data-index='{{index}}' data-current='{{item.current}}' catchtap='selectOptionTap' style='{{index==selectIndex&&"color:#4775ff;"}}'>
+            <text>{{item.name}}</text>
+            <icon type="success_no_circle" color='{{item.current==selectIndex?"#4775ff":"#fff"}}' size="19" />
+          </view>
+        </view>
+        <!-- 筛选列表 -->
+        <view class='weui-navbar-J-list weui-navbar-J-list-te' style='height:{{screenShow?(screenData.length>5?300:screenData.length*88):0}}rpx;'>
+          <view class='weui-navbar-J-list-option' wx:for='{{screenData}}' wx:key='this' data-index='{{index}}' data-enterpriseId='{{item.enterpriseId}}' catchtap='screenOptionTap' style='{{index==screenIndex&&"color:#4775ff;"}}'>
+            <text>{{item.shortName}}</text>
+            <icon type="success_no_circle" color='{{index==screenIndex?"#4775ff":"#fff"}}' size="19" />
+          </view>
+        </view>
+        <view class='screen-title weui-navbar-J' wx:if='{{screenTitleShow}}'>
+          <view class='screen-title-text'>
+                   {{screenTitle}}
+                   <!-- <text  class='J-completed'>(筛选中)</text> -->
+          </view>
+         <view class='screen-title-image weui-navbar-J-title-image'>
+            <image catchtap='screenTitleCuo'  src="../../images/cuo1.png"></image>
+          </view>
+        </view>
+      
+      </view>
+      <view class="page__bd" style='padding-top:{{screenTitleShow?180:90}}rpx;'>
+        <block wx:for="{{records}}" wx:key='this'>
+          <view class="page__cell" data-id="{{item.id}}" bindtap="waybillList">
+            <view class="weui-cell page-cell-title">
+              <view class="weui-cell__bd">
+                <view class='inline-block xian'></view>单号：{{item.waybillNo}}
+              </view>
+              <view class="weui-cell__ft">
+                <block wx:if="{{item.status==-1}}">
+                  <text class='J-underWay'>作废</text>
+                  <image src='../../images/back.png'></image>
+                </block>
+                <block wx:elif="{{item.status==1}}">
+                  <text class='J-underWay'>开单</text>
+                  <image src='../../images/back.png'></image>
+                </block>
+                <block wx:elif="{{item.status==5}}">
+                  <text class='J-underWay'>等待发车</text>
+                  <image src='../../images/back.png'></image>
+                </block>
+                <block wx:elif="{{item.status==10||item.status==20}}">
+                  <text class='J-underWay'>运输中</text>
+                  <image src='../../images/back.png'></image>
+                </block>
+                <block wx:elif="{{item.status==15}}">
+                  <text class='J-underWay'>已到站</text>
+                  <image src='../../images/back.png'></image>
+                </block>
+                <block wx:else>
+                  <text class='J-completed'>已签收</text>
+                  <image src='../../images/back1.png'></image>
+                </block>
+              </view>
+            </view>
+            <view class="weui-cell page-cell-body">
+              <view class="bd-body-ul">
+                <view class="bd-body-ul-body">
+                  <view class="bd-body-ul-li">
+                    <view class="Explanatory inline-block">
+                      <text>货物：</text>
+                    </view>
+                    <view class=" inline-block" wx:if='{{item.goodsName}}'>{{item.goodsName}}</view>
+                    <view class=" inline-block" wx:if='{{item.goodsNum}}'>，{{item.goodsNum}}件</view>
+                    <view class=" inline-block" wx:if='{{item.goodsWeight}}'>，{{item.goodsWeight}}千克</view>
+                    <view class=" inline-block" wx:if='{{item.goodsBulk}}'>，{{item.goodsBulk}}立方</view>
+                  </view>
+                  <view class="bd-body-ul-li">
+                    <view class="Explanatory inline-block">
+                      <text>运费：</text>
+                    </view>
+                    <view class=" inline-block" >{{item.payType?item.payType:''}}{{item.totalFee?item.totalFee:0}}元</view>
+                  </view>
+                  <view class="bd-body-ul-li">
+                    <view class="Explanatory inline-block">
+                      <text>线路：</text>
+                    </view>
+                    <view class=" inline-block" wx:if='{{item.beginSiteName}}'> {{item.beginSiteName}}--</view>
+                    <view class=" inline-block" wx:if='{{item.endSiteName}}'> {{item.endSiteName}}</view>
+
+                  </view>
+                  <view class="bd-body-ul-li">
+                    <view class="Explanatory inline-block">
+                      <text>承运：</text>
+                    </view>
+                    <view class=" inline-block" wx:if='{{item.shortName}}'> {{item.shortName}}</view>
+                  </view>
+                </view>
+              </view>
+            </view>
+            <view class=" page-cell-footer">
+              <image src='../../images/car.png'></image>
+              <view class=" inline-block" wx:if='{{item.trackTime}}'>
+                {{item.trackTime}} 发车
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>

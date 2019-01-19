@@ -1,0 +1,7 @@
+  {
+    "onReachBottomDistance": 50,
+    
+    "component": true,
+    "enablePullDownRefresh": false,
+    "disableScroll": false
+  }

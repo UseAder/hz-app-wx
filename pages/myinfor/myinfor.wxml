@@ -1,0 +1,14 @@
+<view class='weui-navbar-J-list'>
+  <view class='weui-navbar-J-list-option' wx:for='{{screenData}}' wx:key='this' data-index='{{index}}' data-enterpriseId='{{item.enterpriseId}}' bindtap='deliveScreen' hidden='{{item.enterpriseId==null}}' >
+    <text>{{item.shortName}}</text>
+    <view class="optionRight">
+    <view class="SerialNumber inline-block ">{{item.transportNum}}</view>
+    <view class="weui-cell__ft_in-access"></view>
+    </view>
+    
+  </view>
+</view>
+<view class="weui-btn-area"  bindtap='binding'>
+  <button class="weui-btn">
+    <image class="wxImage" src="../../images/add1.png"></image>绑定物流专线</button>
+</view>
